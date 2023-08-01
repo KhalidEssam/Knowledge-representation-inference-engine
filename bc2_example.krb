@@ -1,0 +1,55 @@
+
+
+Same_brand
+    use relation($car1, $car2, Same_brand, $Brand2)
+    when  
+	Car.Brand_of($car1, $Brand1)
+	Car.Brand_of($car2, $Brand2)
+	check $car1 != $car2 and $Brand1 == $Brand2
+
+Same_Category
+    use relation($car1, $car2, Same_Category,$Category1)
+    when  
+	Car.Category_of($car1, $Category1)
+	Car.Category_of($car2, $Category2)
+	check $car1 != $car2 and $Category1 == $Category2
+Same_Country
+    use relation($car1, $car2, Same_Country,$Country2)
+    when  
+	Car.country_of($car1, $Country1)
+	Car.country_of($car2, $Country2)
+	check $car1 != $car2 and $Country1 == $Country2
+
+#select_Country1
+    #use relation($car1, $car2, select_Country,select_Country)
+    #when 
+        #questions.any_country(1)
+
+
+
+select_Country
+    use relation($car1, $car2, $country,$select_Country)
+    when  
+        questions.any_country($ans)
+        Car.country_of($car1, $ans)
+        questions.any_category($ans1)
+        Car.Category_of($car1, $ans1)
+        questions.any_Brand($ans2)
+        Car.Brand_of($car1, $ans2)
+
+
+
+        #$country=$ans
+        #$select_Country=$ans1
+	    #check $car2 == $car1
+
+
+
+
+
+how_related
+    use how_related($person1, $person2, ($p1_type, $p2_type))
+    when
+	relation($person1, $person2, $p1_type, $p2_type)
+
+

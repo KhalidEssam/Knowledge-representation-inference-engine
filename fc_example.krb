@@ -1,0 +1,45 @@
+
+
+Same_category
+    foreach
+        Car.Category_of($car1, $Category1)
+        Car.Category_of($car2, $Category2)
+        check $car1 != $car2 and $Category1 == $Category2 and $Category1 not in (1,2,3,4,5,6,7,8,9)
+    assert
+        Car.siblings($car1, $car2, Same_Category, $Category1)
+
+Select_Category
+    foreach
+        Car.Category_of($Category,$car1)
+        #check $car1 != $car2 and $Category1 == $Category2 and $Category1 not in (1,2,3,4,5,6,7,8,9)
+    assert
+        Car.siblings($car1, car2, Same_Category, $Category)
+
+
+Same_brand
+    foreach
+        Car.Brand_of($car1, $Brand1)
+        Car.Brand_of($car2, $Brand2)
+        check $car1 != $car2 and $Brand1 == $Brand2 and $Brand1 not in (1,2,3,4,5,6,7,8,9)
+    assert
+	    Car.siblings($car1, $car2, Same_brand, $Brand2)
+
+Same_Country
+    foreach
+        Car.country_of($car1, $country)
+        Car.country_of($car2, $country1)
+        check $car1 != $car2 and $country == $country1 and $country not in (1,2,3,4,5,6,7,8,9)
+    assert
+	    Car.siblings($car1, $car2, Same_Country, $country)
+
+
+
+
+
+
+
+how_related_siblings
+    foreach
+	Car.siblings($person1, $person2, $p2_type, $p1_type)
+    assert
+        Car.how_related($person1, $person2, ($p1_type, $p2_type))

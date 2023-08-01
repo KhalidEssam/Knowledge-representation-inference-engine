@@ -1,0 +1,43 @@
+# questions.kqb
+
+any_country($ans)
+    Select the country you want your car ?
+    ---
+    $ans = select_1
+        1: Germany
+        2: UK
+        3: Italia
+        4: USA
+        5: none
+            ! nice
+
+any_category($ans)
+    Select the Category you want your car ?
+    ---
+    $ans = select_1
+        1: SUV
+        2: Super_Car
+        3: Sport_Car
+        4: Sedan
+        5: Family
+        6: Cabriolet
+            ! nice
+
+any_Brand($ans)
+    Select the Brand you want your car ?
+    ---
+    $ans = select_1
+        1: BMW
+        2: volkswagen
+        3: Ford
+        4: Chevrolet
+        5: Rolls_Royce
+        6: Ferrari
+        7: lamborghini
+        8: Mercedes_benz
+            ! nice
+
+is_raining($car1)
+    any country_of these are yours ?
+    ---
+    $car1= yn
